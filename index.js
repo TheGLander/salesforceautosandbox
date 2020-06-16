@@ -35,12 +35,16 @@ function wait(time) {
 			`${baseTryItSelector}>div>div>.opblock-section-header>div>button`
 		)
 	).click()
-	const operation = process.env.AUTOSALESFORCE_ORDER || "start"
+	const operation = process.env.AUTOSALESFORCE_ORDER || "stop"
+	await page.evaluate(
+		(sel) => (document.querySelector(sel).value = ""),
+		`${baseTryItSelector}>div>div>div>table>tbody>tr>td>div>div>div>textarea`
+	)
 	await (
 		await page.waitForSelector(
 			`${baseTryItSelector}>div>div>div>table>tbody>tr>td>div>div>div>textarea`
 		)
-	).evaluate((el, val) => (el.value = `{"operation":"${val}"}`), operation)
+	).type(`{"operation":"${operation}"}`)
 	await (
 		await page.waitForSelector(
 			`${baseTryItSelector}>div>div>div>table>tbody>tr>td>input`
@@ -50,5 +54,6 @@ function wait(time) {
 		await page.waitForSelector(`${baseTryItSelector}>div>div>.execute`)
 	).click()
 	await page.waitForSelector(`${baseTryItSelector}>div>div>.btn-clear`)
+	await wait(1000)
 	await browser.close()
 })()
