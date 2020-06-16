@@ -1,0 +1,27 @@
+{
+	"name": "salesforceautosandbox",
+	"version": "1.0.0",
+	"description": "An automatic sandbox toggler, designed to be used with cron",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"production": "npx nexe index.js -t linux-x64-12.0.0 -o dist/salesforceautosandbox"
+	},
+	"keywords": [],
+	"author": "G lander",
+	"license": "ISC",
+	"dependencies": {
+		"puppeteer": "^3.3.0"
+	},
+	"devDependencies": {
+		"nexe": "^3.3.2"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/TheGLander/salesforceautosandbox.git"
+	},
+	"bugs": {
+		"url": "https://github.com/TheGLander/salesforceautosandbox/issues"
+	},
+	"homepage": "https://github.com/TheGLander/salesforceautosandbox#readme"
+}
