@@ -1,6 +1,6 @@
 {
 	"name": "salesforceautosandbox",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "An automatic sandbox toggler, designed to be used with cron",
 	"main": "index.js",
 	"scripts": {
