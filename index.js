@@ -67,16 +67,16 @@ if (debug)
 	const operation = process.env.AUTOSALESFORCE_ORDER
 	await page.evaluate(
 		(sel) => (document.querySelector(sel).value = ""),
-		`${baseTryItSelector}>div>div>div>table>tbody>tr>td>div>div>div>textarea`
+		`${baseTryItSelector}>div>div>div>div>table>tbody>tr>td>div>div>div>textarea`
 	)
 	await (
 		await page.waitForSelector(
-			`${baseTryItSelector}>div>div>div>table>tbody>tr>td>div>div>div>textarea`
+			`${baseTryItSelector}>div>div>div>div>table>tbody>tr>td>div>div>div>textarea`
 		)
 	).type(`{"operation":"${operation}"}`)
 	await (
 		await page.waitForSelector(
-			`${baseTryItSelector}>div>div>div>table>tbody>tr>td>input`
+			`${baseTryItSelector}>div>div>div>div>table>tbody>tr>td>input`
 		)
 	).type(process.env.AUTOSALESFORCE_SANDBOXID)
 	await (
